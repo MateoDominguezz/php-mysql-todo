@@ -12,10 +12,12 @@ class DataBase{
         return $this->errorMessage;
     }
 
-    function __construct($xhost,$xusser,$xpassword,$xbase){ 
-        $this ->bd = new mysqli($xhost,$xusser,$xpassword,$xbase);
+    function __construct(){ 
+        $this ->bd = new mysqli(HOST,USER,PASSWORD,DATABASE);
         if ($this->bd->connect_errno){
-                $this->errorMessage="Error de Conexion";
+                $this->errorMessage="Error de Conexion ("
+                . $this->bd->connect_errno . ") "
+                . $this ->bd->connect_errno;
             $this->conexion = false;
         } else{
             $this->conexion = true;
