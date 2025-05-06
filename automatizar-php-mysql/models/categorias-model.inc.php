@@ -10,12 +10,12 @@ class CategoriasModel{
 
     if (!$bd->getEstadoConexion()){
         $aResponse["estado"] = "ERROR";
-        $aResponse['mensaje'] = $bd->getMensajeError();
+        $aResponse['mensaje'] = $bd->getMessageError();
         return $aResponse;
     } 
         $aResponse['estado'] = 'success';
-        $aResponse['mensaje'] = $bd->getMensajeError();
-        $aResponse['daots'] = $bd->getQuery($sql);
+        $aResponse['mensaje'] = $bd->getMessageError();
+        $aResponse['datos'] = $bd->getQuery($sql);
         $bd->close();
         return $aResponse;
     }
@@ -27,12 +27,12 @@ class CategoriasModel{
 
         if(!$bd->getEstadoConexion()){
             $aResponse["estado"] = "ERROR";
-            $aResponse['mensaje'] = $bd->getMensajeError();
+            $aResponse['mensaje'] = $bd->getMessageError();
             return $aResponse;            
         }
 
         $aResponse["estado"] = 'success';
-        $aResponse['mensaje'] = $bd->getMensajeError();
+        $aResponse['mensaje'] = $bd->getMessageError();
         $aResponse['datos'] = $bd->getQuery($sql);
         $bd->close();
         return $aResponse;
@@ -49,7 +49,7 @@ class CategoriasModel{
 
         if(!$bd->getEstadoConexion()){
             $aResponse["estado"] = "ERROR";
-            $aResponse['mensaje'] = $bd->getMensajeError();
+            $aResponse['mensaje'] = $bd->getMessageError();
             return $aResponse;            
         }
 
@@ -72,7 +72,7 @@ class CategoriasModel{
 
         if(!$bd->getEstadoConexion()){
             $aResponse["estado"] = "ERROR";
-            $aResponse['mensaje'] = $bd->getMensajeError();
+            $aResponse['mensaje'] = $bd->getMessageError();
             return $aResponse;            
         }
 
